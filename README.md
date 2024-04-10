@@ -27,6 +27,7 @@ The following **additional** features are implemented:
 
 -   [ ] The website contains an intro page with a short description of what the app is about
 -   [ ] The home screen contains a button to go to the home page to see all characters
+-   [ ] Users are able to cycle through different characters and choose an image based on character
 
 ## Video Walkthrough
 
