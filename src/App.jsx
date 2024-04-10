@@ -1,7 +1,9 @@
 import { Link, useRoutes } from "react-router-dom";
-import { homePath } from "./data/data";
+import { homePath, createPath, egoDetailPage } from "./data/data";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
+import Create from "./pages/Create";
+import Detail from "./pages/Detail";
 
 function App() {
 	let elements = useRoutes([
@@ -13,14 +15,25 @@ function App() {
 			path: "*",
 			element: <NoPage />,
 		},
+		{
+			path: createPath,
+			element: <Create />,
+		},
+		{
+			path: egoDetailPage,
+			element: <Detail />,
+		},
 	]);
 
 	return (
 		<div className="min-h-screen flex justify-center items-center flex-col gap-10">
 			<nav>
-				<ul>
+				<ul className="flex gap-10">
 					<li>
 						<Link to={homePath}>Home</Link>
+					</li>
+					<li>
+						<Link to={createPath}>Create</Link>
 					</li>
 				</ul>
 			</nav>
