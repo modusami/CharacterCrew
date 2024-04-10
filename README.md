@@ -1,8 +1,8 @@
-# Web Development Project 7 - **Alter-Ego Creator**
+# Web Development Project 7 - **MiiCrew**
 
 Submitted by: **Michael-Andre Odusamie**
 
-This web app: **If you ever wanted to create different descriptions of who you may want to be, visit this website where you can create customer characters or crewmates which will be described as an alter ego of yours!**
+This web app: **If you ever wanted to create different descriptions of who you may want to be, visit this website where you can create customer characters or crewmates which will be described as an alter ego of yours and represented as miis!**
 
 Time spent: **3** hours spent in total
 

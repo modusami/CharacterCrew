@@ -11,6 +11,7 @@ function Home() {
 						key={index}
 						title={i.title}
 						age={i.age}
+						img={i.img}
 						category={i.category}
 						id={i.id}
 						description={i.description}

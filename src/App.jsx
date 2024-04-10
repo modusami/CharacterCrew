@@ -1,9 +1,10 @@
 import { Link, useRoutes } from "react-router-dom";
-import { homePath, createPath, egoDetailPage } from "./data/data";
+import { homePath, createPath, egoDetailPage, editPath } from "./data/data";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 import Create from "./pages/Create";
 import Detail from "./pages/Detail";
+import Edit from "./pages/Edit";
 
 function App() {
 	let elements = useRoutes([
@@ -22,6 +23,10 @@ function App() {
 		{
 			path: egoDetailPage + "/:id",
 			element: <Detail />,
+		},
+		{
+			path: editPath + ":id",
+			element: <Edit />,
 		},
 	]);
 
