@@ -2,22 +2,22 @@ import { Link } from "react-router-dom";
 import default_character from "/cdefault.png";
 import { egoDetailPage } from "../data/data";
 
-function Character({ id, img, title, age }) {
+function Character({ id, img, name, age, showAge = true }) {
 	return (
 		<div className="flex flex-col">
-			<div className="flex-1 flex items-center justify-center">
-				<Link to={egoDetailPage + "/" + id}>
+			<Link to={egoDetailPage + "/" + id}>
+				<div className="flex-1 flex items-center justify-center">
 					<img
 						src={img ? img : default_character}
 						alt="default Character"
-						className="object-cover"
+						className="object-cover w-[100%]"
 					/>
-				</Link>
-			</div>
-			<div className="mt-4">
-				<h1 className="text-xl font-bold">{title ? title : "Default Character"}</h1>
-				<h2 className="text-lg">Age: {age ? age : "0"}</h2>
-			</div>
+				</div>
+				<div className="mt-4">
+					<h1 className="text-xl font-bold">{name ? name : "Default Character"}</h1>
+					{showAge && <h2 className="text-lg">Age: {age ? age : "0"}</h2>}
+				</div>
+			</Link>
 		</div>
 	);
 }

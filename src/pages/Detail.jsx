@@ -14,13 +14,15 @@ function Detail() {
 		<>
 			<div className="py-5 px-2">
 				<h1 className="text-center text-3xl font-bold">Character Details!</h1>
-				<div className="mx-auto rounded-lg w-[70%] text-center">
+				<div className="mx-auto rounded-lg w-[30%] text-center">
 					<Character
 						img={charData.img}
 						title={charData.title}
 						age={charData.age}
 						id={params.id}
+						showAge={false}
 					/>
+					<h3>Age: {charData.age}</h3>
 					<p>Category: {charData.category}</p>
 					<p>Description: {charData.description}</p>
 					<p>

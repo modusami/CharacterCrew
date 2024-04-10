@@ -3,11 +3,27 @@ import Gwen from "/miis/Gwen.webp";
 import Abby from "/miis/Abby.webp";
 import Matt from "/miis/Matt.webp";
 import Lutrollshi from "/miis/Lutrollshi.webp";
+import Kirby from "/miis/kirby.gif";
+import Naruto from "/miis/naruto.gif";
+import Goku from "/miis/goku.gif";
+import Random from "/miis/rand.gif";
+import DonkeyKong from "/miis/donkey-kong.gif";
 import { useEffect, useState } from "react";
 import { hardData } from "../data/data";
+import { supabase } from "../server/client";
 
 function Create() {
-	const chosenCharacters = [Gwen, Abby, Matt, Lutrollshi];
+	const chosenCharacters = [
+		Gwen,
+		Abby,
+		Matt,
+		Lutrollshi,
+		Kirby,
+		Naruto,
+		Goku,
+		Random,
+		DonkeyKong,
+	];
 	const [chosenCharacterIndex, setIndex] = useState(0);
 
 	const [formData, setData] = useState({
@@ -16,7 +32,6 @@ function Create() {
 		age: "",
 		category: "",
 		description: "",
-		hiddenDescription: "",
 	});
 
 	const handleFormDataImageChange = () => {
@@ -27,32 +42,23 @@ function Create() {
 		setData({ ...formData, [event.target.name]: event.target.value });
 	};
 
-	const handleCreateCharacter = () => {
-		console.log(formData.img);
-
-		// Generate a unique ID for the new character
-		const id = hardData.length + 1;
-
-		// Create a new character object
+	const handleCreateCharacter = async (e) => {
+		e.preventDefault();
 		const newCharacter = {
-			id: id,
-			title: formData.name,
+			name: formData.name,
 			img: formData.img,
 			category: formData.category,
 			age: parseInt(formData.age),
 			description: formData.description,
 		};
-
-		// Update the hardData array by adding the new character object
-		hardData.push(newCharacter);
-
-		// Reset the form fields
+		await supabase.from("Crewmates").insert(newCharacter).select();
 		setData({
 			name: "",
 			age: "",
 			category: "",
 			description: "",
 		});
+		window.location = "/";
 	};
 
 	useEffect(() => {
