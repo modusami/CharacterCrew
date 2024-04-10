@@ -20,24 +20,24 @@ function App() {
 			element: <Create />,
 		},
 		{
-			path: egoDetailPage,
+			path: egoDetailPage + "/:id",
 			element: <Detail />,
 		},
 	]);
 
 	return (
 		<div className="min-h-screen flex justify-center items-center flex-col gap-10">
-			<nav>
+			<nav className="m-10">
 				<ul className="flex gap-10">
-					<li>
+					<li className="text-2xl hover:font-bold">
 						<Link to={homePath}>Home</Link>
 					</li>
-					<li>
+					<li className="text-2xl hover:text-green-800">
 						<Link to={createPath}>Create</Link>
 					</li>
 				</ul>
 			</nav>
-			<div className="h-[900px] w-[90vw] shadow-2xl">{elements}</div>
+			<div className=" min-h-[100vh] w-[90vw] shadow-2xl">{elements}</div>
 		</div>
 	);
 }
