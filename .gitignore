@@ -13,7 +13,7 @@ dist-ssr
 *.local
 
 PLAN.md
-src/server
+
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +25,5 @@ src/server
 *.njsproj
 *.sln
 *.sw?
+
+src/server

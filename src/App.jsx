@@ -42,7 +42,7 @@ function App() {
 					</li>
 				</ul>
 			</nav>
-			<div className=" min-h-[100vh] w-[90vw] shadow-2xl">{elements}</div>
+			<div className=" min-h-[100vh] w-[90vw]">{elements}</div>
 		</div>
 	);
 }

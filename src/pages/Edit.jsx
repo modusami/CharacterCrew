@@ -8,6 +8,7 @@ function Edit() {
 	let params = useParams();
 	const [charData, setCharData] = useState(null);
 	const [formData, setFormData] = useState(null);
+	const [errorMessage, setErrorMessage] = useState("");
 
 	useEffect(() => {
 		const fectchCrewMate = async () => {
@@ -35,18 +36,33 @@ function Edit() {
 		});
 	};
 
+	const checkInputData = (data) => {
+		if (!data) {
+			return false;
+		}
+		return true;
+	};
+
 	const handleSaveData = async (event) => {
 		event.preventDefault();
-		const newCharacter = {
-			name: formData.name,
-			category: formData.category,
-			age: formData.age,
-			description: formData.description,
-		};
+		if (
+			checkInputData(formData.name) &&
+			checkInputData(formData.age) &&
+			checkInputData(formData.category)
+		) {
+			const newCharacter = {
+				name: formData.name,
+				category: formData.category,
+				age: formData.age,
+				description: formData.description,
+			};
 
-		await supabase.from("Crewmates").update(newCharacter).eq("id", params.id);
+			await supabase.from("Crewmates").update(newCharacter).eq("id", params.id);
+			setErrorMessage("");
+			window.location = "/";
+		}
 
-		window.location = "/";
+		setErrorMessage("Fill in the required fields: [Name, Age, Category]");
 	};
 
 	return (
@@ -54,7 +70,7 @@ function Edit() {
 			{formData ? (
 				<>
 					<div className="py-5 px-2">
-						<h1 className="text-center text-3xl font-bold mb-8">Create An Ego!</h1>
+						<h1 className="text-center text-3xl font-bold mb-8">Edit Crewmate</h1>
 						<div className="max-w-lg mx-auto">
 							<form>
 								<div className="w-[70%] mx-auto">
@@ -132,6 +148,9 @@ function Edit() {
 									>
 										Save
 									</button>
+								</div>
+								<div className="mt-3">
+									<p className="text-red-500 font-bold">{errorMessage}</p>
 								</div>
 							</form>
 						</div>

@@ -30,19 +30,22 @@ function Detail() {
 			{charData ? (
 				<>
 					<div className="py-5 px-2">
-						<h1 className="text-center text-3xl font-bold">Character Details!</h1>
-						<div className="mx-auto rounded-lg w-[30%] text-center">
+						<h1 className="text-center text-3xl font-bold uppercase">
+							{charData.name}
+						</h1>
+						<div className="mx-auto rounded-lg w-[50%] text-center">
 							<Character
 								img={charData.img}
 								name={charData.name}
 								age={charData.age}
 								id={params.id}
 								showAge={false}
+								showName={false}
 							/>
-							<h3>Age: {charData.age}</h3>
-							<p>Category: {charData.category}</p>
-							<p>Description: {charData.description}</p>
-							<p>
+							<h3 className="text-xl">Age: {charData.age}</h3>
+							<p className="text-xl">{charData.category.toUpperCase()}</p>
+							<p className="font-bold">{charData.description}</p>
+							<p className="font-serif mt-3">
 								{charData.age <= 20
 									? ageUnder20[charData.category]
 									: charData.age <= 100

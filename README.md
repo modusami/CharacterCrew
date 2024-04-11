@@ -1,8 +1,8 @@
-# Web Development Project 7 - **MiiCrew**
+# Web Development Project 7 - **CharacterCrew**
 
 Submitted by: **Michael-Andre Odusamie**
 
-This web app: **If you ever wanted to create different descriptions of who you may want to be, visit this website where you can create customer characters or crewmates which will be described as an alter ego of yours and represented as miis!**
+This web app: **Come to this website if you would like to create random characters adhering to certain criteria!**
 
 Time spent: **3** hours spent in total
 
@@ -28,29 +28,21 @@ The following **additional** features are implemented:
 -   [✅] The home screen contains a button to go to the home page to see all characters
 -   [✅] Users are able to cycle through different characters and choose an image for their character
 -   [✅] Extra description is given for a crewmate depending on their age and category
+-   [✅] Form Validation is given when creating a character making sure you fill in all required fields
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
+<img src='submission.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ...
 
-<!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
-
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2023 Michael-Andre Odusami
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
