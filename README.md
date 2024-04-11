@@ -10,12 +10,12 @@ Time spent: **3** hours spent in total
 
 The following **required** functionality is completed:
 
--   [ ] **A create form allows users to add new cremates**
--   [ ] **Users can name the crewmate and set the crewmate's attributes by clicking on one of several values**
--   [ ] **The site displays a summary page of all the user's added crewmates**
--   [ ] **A previously created crewmate can be updated from the crewmate list**
--   [ ] **A previously created crewmate can be deleted from the crewmate list**
--   [ ] **Each crewmate has a direct, unique link to an info page about them**
+-   [✅] **A create form allows users to add new cremates**
+-   [✅] **Users can name the crewmate and set the crewmate's attributes by clicking on one of several values**
+-   [✅] **The site displays a summary page of all the user's added crewmates**
+-   [✅] **A previously created crewmate can be updated from the crewmate list**
+-   [✅] **A previously created crewmate can be deleted from the crewmate list**
+-   [✅] **Each crewmate has a direct, unique link to an info page about them**
 
 The following **optional** features are implemented:
 
@@ -25,9 +25,9 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
--   [ ] The website contains an intro page with a short description of what the app is about
--   [ ] The home screen contains a button to go to the home page to see all characters
--   [ ] Users are able to cycle through different characters and choose an image based on character
+-   [✅] The home screen contains a button to go to the home page to see all characters
+-   [✅] Users are able to cycle through different characters and choose an image for their character
+-   [✅] Extra description is given for a crewmate depending on their age and category
 
 ## Video Walkthrough
 

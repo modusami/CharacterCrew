@@ -25,6 +25,7 @@ function Create() {
 		DonkeyKong,
 	];
 	const [chosenCharacterIndex, setIndex] = useState(0);
+	const [errorMessage, setErrorMessage] = useState("");
 
 	const [formData, setData] = useState({
 		name: "",
@@ -42,23 +43,39 @@ function Create() {
 		setData({ ...formData, [event.target.name]: event.target.value });
 	};
 
+	const checkInputData = (data) => {
+		if (!data) {
+			return false;
+		}
+		return true;
+	};
+
 	const handleCreateCharacter = async (e) => {
 		e.preventDefault();
-		const newCharacter = {
-			name: formData.name,
-			img: formData.img,
-			category: formData.category,
-			age: parseInt(formData.age),
-			description: formData.description,
-		};
-		await supabase.from("Crewmates").insert(newCharacter).select();
-		setData({
-			name: "",
-			age: "",
-			category: "",
-			description: "",
-		});
-		window.location = "/";
+		if (
+			checkInputData(formData.name) &&
+			checkInputData(formData.age) &&
+			checkInputData(formData.category)
+		) {
+			const newCharacter = {
+				name: formData.name,
+				img: formData.img,
+				category: formData.category,
+				age: parseInt(formData.age),
+				description: formData.description,
+			};
+			await supabase.from("Crewmates").insert(newCharacter).select();
+			setData({
+				name: "",
+				age: "",
+				category: "",
+				description: "",
+			});
+			setErrorMessage("");
+			window.location = "/";
+		}
+
+		setErrorMessage("Fill in the required fields: [Name, Age, Category]");
 	};
 
 	useEffect(() => {
@@ -145,6 +162,9 @@ function Create() {
 							>
 								Create Character
 							</button>
+						</div>
+						<div className="mt-3">
+							<p className="text-red-500 font-bold">{errorMessage}</p>
 						</div>
 					</form>
 				</div>
